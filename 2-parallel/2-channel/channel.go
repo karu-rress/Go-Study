@@ -91,3 +91,9 @@ func Select() {
 
 	time.Sleep(5 * time.Second)
 }
+
+func main() {
+	Chan()
+	ChanFunc()
+	Select()
+}

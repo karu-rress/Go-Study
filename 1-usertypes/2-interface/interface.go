@@ -23,18 +23,6 @@ type Printer interface {
 	Print()
 }
 
-func testInterface() {
-	var i MyInt = 5
-	r := Rect{10, 20}
-	var p Printer
-
-	p = i
-	p.Print()
-
-	p = r
-	p.Print()
-}
-
 func implementsPrint() bool {
 	var rect Rect
 	_, ok := interface{}(rect).(Printer)
@@ -63,4 +51,16 @@ func formatString(arg interface{}) string {
 	default:
 		return "ERROR"
 	}
+}
+
+func main() {
+	var i MyInt = 5
+	r := Rect{10, 20}
+	var p Printer
+
+	p = i
+	p.Print()
+
+	p = r
+	p.Print()
 }

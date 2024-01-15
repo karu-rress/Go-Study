@@ -2,31 +2,11 @@ package main
 
 import (
 	"fmt"
-	"runtime"
 	"time"
 )
 
 func hello() {
-	fmt.Println("Hello")
-}
-
-func main() {
-	go hello() // 고루틴으로 실행
-	fmt.Println(runtime.GOMAXPROCS(0))
-
-	fmt.Scanln()
-
-	for i := 0; i < 5; i++ {
-		// go로 하면 반복문이 끝난 다음에 실행됨.
-		// 클로저 내부에서 i에 접근하면 5만 뜸. (반복문 끝)
-		go func(n int) {
-			fmt.Println("HI", n)
-		}(i)
-	}
-
-	syncChan()
-	asyncChan()
-
+	fmt.Println("Hello (Press enter key)")
 }
 
 func sum(a int, b int, c chan int) {
@@ -70,4 +50,22 @@ func asyncChan() {
 	for i := range done {
 		fmt.Println("호출자: ", i)
 	}
+}
+
+func main() {
+	go hello() // 고루틴으로 실행
+
+	fmt.Scanln()
+
+	for i := 0; i < 5; i++ {
+		// go로 하면 반복문이 끝난 다음에 실행됨.
+		// 클로저 내부에서 i에 접근하면 5만 뜸. (반복문 끝)
+		go func(n int) {
+			fmt.Println("HI", n)
+		}(i)
+	}
+
+	syncChan()
+	asyncChan()
+
 }

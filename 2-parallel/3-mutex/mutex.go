@@ -33,6 +33,7 @@ func Mutex() {
 
 	time.Sleep(2 * time.Second)
 	fmt.Println(len(data))
+	fmt.Println()
 }
 
 func RwMutex() {
@@ -68,4 +69,9 @@ func RwMutex() {
 	}()
 
 	time.Sleep(10 * time.Second)
+}
+
+func main() {
+	Mutex()
+	RwMutex()
 }

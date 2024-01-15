@@ -64,3 +64,8 @@ func Dynamic() {
 	fmt.Println(floatSum(3.1, 2.3))
 	fmt.Println(stringSum("Hi, ", "Go"))
 }
+
+func main() {
+	DyFunc()
+	Dynamic()
+}

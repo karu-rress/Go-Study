@@ -118,7 +118,7 @@ func Atomic() {
 	var data int32 = 0
 	wg := new(sync.WaitGroup)
 
-	for i := 0; i < 2000;i++{
+	for i := 0; i < 2000; i++ {
 		wg.Add(1)
 		go func() {
 			atomic.AddInt32(&data, 1)
@@ -126,7 +126,7 @@ func Atomic() {
 		}()
 	}
 
-	for i := 0; i < 1000;i++{
+	for i := 0; i < 1000; i++ {
 		wg.Add(1)
 		go func() {
 			atomic.AddInt32(&data, -1)
@@ -136,4 +136,11 @@ func Atomic() {
 
 	wg.Wait()
 	fmt.Println(data)
+}
+
+func main() {
+	Cond()
+	Once()
+	Pool()
+	Atomic()
 }
