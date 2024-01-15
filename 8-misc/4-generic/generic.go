@@ -14,7 +14,7 @@ func SumNumbers[K comparable, V Number](m map[K]V) (s V) {
 	return
 }
 
-func Generic() {
+func main() {
 	// Initialize a map for the integer values
 	ints := map[string]int64{
 		"first":  34,

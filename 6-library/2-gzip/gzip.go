@@ -49,3 +49,8 @@ func Decompress() {
 		fmt.Println(string(b))
 	}
 }
+
+func main() {
+	Compress()
+	Decompress()
+}

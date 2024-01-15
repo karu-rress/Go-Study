@@ -74,3 +74,8 @@ func SortWithKey() {
 	By(reverseScore).Sort(s)
 	fmt.Println(s)
 }
+
+func main() {
+	Sort()
+	SortWithKey()
+}

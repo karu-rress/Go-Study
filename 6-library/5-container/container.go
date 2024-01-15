@@ -75,3 +75,9 @@ func Heap() {
 
 	fmt.Println(data, "최솟값: ", (*data)[0])
 }
+
+func main() {
+	List()
+	Ring()
+	Heap()
+}

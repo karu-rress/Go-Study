@@ -156,5 +156,9 @@ func DigitalSign() {
 }
 
 func main() {
+	Hash()
+	SymmetricECB()
 	SymmetricCBC()
+	Asymmetric()
+	DigitalSign()
 }
